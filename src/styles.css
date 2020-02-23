@@ -6,3 +6,16 @@
   border: 2px solid #000;
   font-size: 2em;
 }
+
+.btn {
+  height: 20px;
+  width: 50px;
+  font-size: 12px;
+  box-shadow: 1px 1px;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  color: #000;
+  background-color: yellow
+}
