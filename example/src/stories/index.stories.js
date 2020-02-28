@@ -1,17 +1,33 @@
 import React from 'react';
-import { ExampleComponent, Button } from 'react-ui-plus'
-import componentNotes from './notes.md'
+import { Button } from 'react-ui-plus'
+import { makeStyles } from '@material-ui/core/styles';
 
 export default {
   title: 'MyComponent',
-  parameters: { notes: componentNotes },
 };
+const useStyles = makeStyles(theme => ({
+  root: {
+    '& button': {
+      marginRight: '20px'
+    }
+  },
+}));
+export const buttons = () => {
+  const classes = useStyles();
+  return <div className={classes.root}>
+    <Button variant="contained">Default</Button>
+    <Button variant="contained" color="primary">
+      Primary
+      </Button>
+    <Button variant="contained" color="secondary">
+      Secondary
+      </Button>
+    <Button variant="contained" disabled>
+      Disabled
+      </Button>
+    <Button variant="contained" color="primary" href="#contained-buttons">
+      Link
+      </Button>
+  </div>
 
-
-export const button = () => <Button text="Test" variant="primary"></Button>;
-export const exampleComponent = () => <ExampleComponent text='Modern React component module' className="secondary" />;
-
-export const special = () => <Button text="The Boss" />;
-special.story = {
-  parameters: { notes: componentNotes },
-};
+}
